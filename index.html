@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Deteksi Gastro Usus</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        .choose {
+            list-style-type: none;
+        }
+        .col-md-3 {
+            margin-top: 5px;
+        }
+        #perhitungan, #tampil-perhitungan {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="form">
+            <div class="row mt-3">
+                <div class="col-md-12">
+                    <h3>Silakan mengisi kuisioner berikut sesuai gejala-gejala yang dirasakan</h3>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Buang Air Besar (Lebih dari 2 kali)</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="1" id="1"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="1" id="1" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Berak encer</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="2" id="2"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="2" id="2" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Berak berdarah</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="3" id="3"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="3" id="3" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Lesu dan tidak bergairah</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="4" id="4"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="4" id="4" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Tidak selera makan</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="5" id="5"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="5" id="5" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Merasa mual dan sering muntah (lebih dari 1 kali)</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="6" id="6"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="6" id="6" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Merasa sakit di bagian perut</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="7" id="7"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="7" id="7" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Tekanan darah rendah</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="8" id="8"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="8" id="8" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Pusing</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="9" id="9"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="9" id="9" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Pingsan</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="10" id="10"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="10" id="10" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Suhu badan tinggi</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="11" id="11"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="11" id="11" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Luka di bagian tertentu</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="12" id="12"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="12" id="12" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Tidak dapat menggerakkan anggota badan tertentu</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="13" id="13"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="13" id="13" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Memakan sesuatu</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="14" id="14"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="14" id="14" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Memakan daging</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="15" id="15"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="15" id="15" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Memakan jamur</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="16" id="16"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="16" id="16" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Memakan makanan kaleng</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="17" id="17"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="17" id="17" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Membeli susu</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="18" id="18"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="18" id="18" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <p>Meminum susu</p>
+                            <ul class="choose">
+                                <li><label><input type="radio" class="input" value="1" name="19" id="19"> Ya</label></li>
+                                <li><label><input type="radio" class="input" value="0" name="19" id="19" checked> Tidak</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3 mb-3">
+                <div class="col-md-4 offset-md-4">
+                    <button id="button" class="btn btn-primary btn-block">Cek Indikasi Gastro Usus</button>
+                </div>
+            </div>
+
+            
+        </form>
+    </div>
+
+    <div class="mt-3 mb-3">
+        <h3 class="text-center" id="indikasi"></h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+                    <button id="tampil-perhitungan" class="btn btn-primary btn-block">Hasil perhitungan ⯆</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card col-md-12" id="perhitungan">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <table class="table">
+                                    <tr>
+                                        <th>Indikasi</th>
+                                        <th>Nilai</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencret</td>
+                                        <td id="20"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Muntah</td>
+                                        <td id="21"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sakit perut</td>
+                                        <td id="22"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Darah rendah</td>
+                                        <td id="23"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Koma</td>
+                                        <td id="24"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Demam</td>
+                                        <td id="25"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Septicaemia</td>
+                                        <td id="26"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lumpuh</td>
+                                        <td id="27"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mencret berdarah</td>
+                                        <td id="28"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Makan daging</td>
+                                        <td id="29"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Makan jamur</td>
+                                        <td id="30"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Makan makanan kaleng</td>
+                                        <td id="31"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Minum susu</td>
+                                        <td id="32"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col-md-6">
+                                <table class="table">
+                                    <tr>
+                                        <th>Indikasi</th>
+                                        <th>Nilai</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Keracunan Staphylococcus aureus</td>
+                                        <td id="33"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Keracunan jamur beracun</td>
+                                        <td id="34"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Keracunan Salmonellae</td>
+                                        <td id="35"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Keracunan Clostridium botulinum</td>
+                                        <td id="36"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Keracunan Campylobacter</td>
+                                        <td id="37"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/lodash.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
